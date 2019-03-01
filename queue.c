@@ -26,8 +26,14 @@ queue_t *q_new()
 {
     queue_t *q = malloc(sizeof(queue_t));
     /* What if malloc returned NULL? */
-    q->head = NULL;
-    return q;
+    if (!q) {
+        return NULL;
+    } else {
+        q->head = NULL;
+        q->tail = NULL;
+        q->size = 0;
+        return q;
+    }
 }
 
 /* Free all storage used by queue */
