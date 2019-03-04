@@ -82,7 +82,7 @@ bool q_insert_head(queue_t *q, char *s)
         free(newh);
         return false;
     }
-    strpcy(newh->value, s);
+    strcpy(newh->value, s);
     if (q->size == 0) {
         q->tail = newh;
         newh->next = NULL;
